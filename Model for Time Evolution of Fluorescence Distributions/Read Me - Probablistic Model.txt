@@ -23,4 +23,4 @@ The best fit parameters are saved as .pkl files, which can be opened in Python. 
 The returned parameters are listed in the following order:
 	[alpha, beta, gamma, sigma, k, mu, P_b, F_b, sd]
 
-Violin plots and parameter plots are generated in their corresponding Jupyter notebooks and saved as both .png and .eps or .svg files.
+Violin plots and parameter plots are generated in "Half Violin Plots + Model including mRNAsd-Final" and "Prob Model Param Plots with 90% CI Final" Jupyter notebooks, respectively, and saved as both .png and .eps or .svg files.
