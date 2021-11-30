@@ -1,0 +1,7 @@
+Raw data exists as fastq files on GEO server (GSE189540). 
+
+Fastq files are processed first with "cutrun_pipeline_v9_2021-10-16.py" to align, filter and normalize reads, followed by "cutrun_pipeline_part2_20211019.py" to generate bedgraph files. 
+
+Shell scripts "find_5kbreporter_lines.sh" or "find_chr19_lines.sh" for CHO or K562, respectively, are used to generate smaller bedgraphs for generating quantification plots. 
+
+Python scripts "bedgraphAUC_K562_5kb.py", "bedgraphAUC_K562_5kb_signal_diff_norm.py", "catplot_K562_5kb_signal_diff_norm" and "barplot_K562_5kb_signal_diff_norm.py" are used to generate various plots quanitifying signal across elements of interest.  
