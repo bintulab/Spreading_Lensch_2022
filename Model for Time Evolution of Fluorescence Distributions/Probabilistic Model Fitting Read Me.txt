@@ -1,0 +1,26 @@
+Raw data exists as .csv files named for CR+Spacer/Geometry+Rep/Clone (K562 reps are distinguished by an "R" before the rep number). 
+All data is to 5 days, except where the name ends in an "A" for All where data goes to 24 days (only for K562 HDAC NS and 5kb).
+	examples:	KNS8 is CHO KRAB No Spacer clone 8 
+	    		KNSR2 is K562 KRAB No Spacer rep 2
+	Note that CHO ins data is multiclonal and reps are numbered 1-3 (no R), but CHO HSH also has 3 single clones (not numbered 1-3).
+
+In each .csv file, there are 3 columns for the following fields:
+	[log10(Cit_Fluorescence), log10(mCh_Fluorescence), Day]
+	Data was gated for live cells and IFP pos using EasyflowCyto.m before writing to .csv format.
+	-dox days are negative integers
+
+Fits are conducted in "Probabilistic Model Fitting..." files. All fits include mRNA and spike delay, but HDAC fits have an unfixed
+gamma while KRAB fits use gamma values from HDAC fits, or estimated gamma values from raw HDAC data. The code for each core file
+is identical, but the fits are distributed among the core files to allow parallel processing.
+
+The best fit parameters are saved as .pkl files, which can be opened in Python. The file contains a tuple. The first value (index 
+0) of the tuple is a dictionary for the Citrine fits. The keys are named for the .csv files that generated the fit.
+	example:	# The following lines of code return the best fit parameters for K562 HDAC 5kb Cit Rep 2
+			import pickle
+			data = pickle.load(open('K562_H5K_Final_Fits.pkl', 'rb'))
+			data[0]['H5KR2A']
+
+The returned parameters are listed in the following order:
+	[alpha, beta, gamma, sigma, k, mu, P_b, F_b, sd]
+
+Violin plots and parameter plots are generated in their corresponding Jupyter notebooks and saved as both .png and .eps or .svg files.
