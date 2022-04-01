@@ -1,0 +1,5 @@
+Single cells in acquired TIFF images are segmented and tracked MACKtrack (https://github.com/brookstaylorjr/MACKtrack). 
+
+Matlab script "cell_analysis_macktrack_v3.0.m" is then used to filter pre-silenced cells or poorly tracked cell traces. This script is dependent on "copychildren.m" in the same directory. 
+
+Matlab script "trace_stitchin_script_v3.0.m" is then used to call cell division event and stitch traces together in order to call silencing events. 
