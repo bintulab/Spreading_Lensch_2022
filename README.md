@@ -1,4 +1,4 @@
-# Spreading_Lensch2021
+# Spreading_Lensch_2022
 Code and data associated with Dynamic spreading of chromatin-mediated gene silencing and reactivation between neighboring genes in single cells: 
 https://www.biorxiv.org/content/10.1101/2021.11.04.467237v1.full
 
