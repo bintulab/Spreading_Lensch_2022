@@ -13,6 +13,13 @@ Shell scripts "find_5kbreporter_lines.sh" or "find_chr19_lines.sh" for CHO or K5
 
 Python scripts "bedgraphAUC_K562_5kb.py", "bedgraphAUC_K562_5kb_signal_diff_norm.py", "catplot_K562_5kb_signal_diff_norm" and "barplot_K562_5kb_signal_diff_norm.py" are used to generate various plots quanitifying signal across elements of interest.  
 
+## Time-lapse microscopy analysis
+Single cells in acquired TIFF images are segmented and tracked MACKtrack (https://github.com/brookstaylorjr/MACKtrack). 
+
+Matlab script "cell_analysis_macktrack_v3.0.m" is then used to filter pre-silenced cells or poorly tracked cell traces. This script is dependent on "copychildren.m" in the same directory. 
+
+Matlab script "trace_stitchin_script_v3.0.m" is then used to call cell division event and stitch traces together in order to call silencing events.
+
 ## Model for Time Evolution of Fluorescence Distributions
 Raw data exists as .csv files named for CR+Spacer/Geometry+Rep/Clone (K562 reps are distinguished by an "R" before the rep number).
 In each .csv file, there are 3 columns for the following fields: [log10(Cit_Fluorescence), log10(mCh_Fluorescence), Day].
@@ -27,3 +34,4 @@ The returned parameters are listed in the following order:
 [alpha, beta, gamma, sigma, k, mu, P_b, F_b, sd]
 
 Violin plots and parameter plots are generated in "Half Violin Plots + Model including mRNAsd-Final" and "Prob Model Param Plots with 90% CI Final" Jupyter notebooks, respectively.
+
